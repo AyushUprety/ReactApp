@@ -9,13 +9,10 @@ class App extends React.Component {
     submitForm=async(event)=>{
         const response = await unsplash.get('/search/photos',{
             params:{query:event},
-            headers:{
-                Authorization:'Client-ID BFQ-XsNXkU6iZ8BmQSlzdQ8uA-nyLMJnYQr9iUdAl-g',
-        }
         }
         )
-        console.log(this)
-        console.log(response.data.results);
+        // console.log(this)
+        // console.log(response.data.results);
         this.setState({image:response.data.results});
       
     }
@@ -24,7 +21,7 @@ class App extends React.Component {
         return (
             <div className="ui segment container">
                  <SearchBar submit={this.submitForm}/>
-                 <h1>Found {this.state.image.length} images</h1>
+                 <ImageList images={this.state.image}/>
             </div>
            
         )
