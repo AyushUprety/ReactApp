@@ -1,5 +1,6 @@
 import React from 'react';
 import youtube from '../Apis/youtube';
+import VideoList from './videolist'
 
 
 class Search extends React.Component {
@@ -24,7 +25,7 @@ class Search extends React.Component {
                     <label htmlFor="search">Enter the search term:</label>
                     <input type="text" id="search" name="search" ></input>
                 </form>
-                    There are {this.state.term.length} videos.
+                    <VideoList Videos={this.state.term} />
             </div>
         )
     }
