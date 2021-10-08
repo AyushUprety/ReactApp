@@ -6,9 +6,13 @@ const VideoList = (props)=>{
     const rendar=allVideo.map(video=>{
         return <Video videos={video}/>
     })
+    const parentfunc=()=>{
+        return props.videos.snippet.title
+    }
     return (
-        <div className="ui segme container">   
+        <div className="ui segment container">
             {props.Videos.length}
+            <Video childfunction={parentfunc}/>
             {rendar}
         </div>
     )
