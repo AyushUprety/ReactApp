@@ -1,14 +1,20 @@
-import React from 'react';
+import React,{ useState } from 'react';
 
-const widget = ({Items})=>{
-    const renderesList = Items.map(item =>{
+const Widget = ({Items})=>{
+    const [activeIndex,setIndex]=useState(null); // set starting index value to null and setIndex is an update variable
+    
+    const displayindex= (index)=>{
+        setIndex(index);
+    }
+    const renderesList = Items.map((item,index) =>{
+        const active = index===activeIndex?'active':'';
     return (
-        <div class="ui styled accordion">
-            <div class="active title">
-                <i class="dropdown icon"></i>
+        <div className="ui styled accordion" key={item.title}>
+            <div className={`${active} title`} onClick={()=>{displayindex(index)}}>
+                <i className="dropdown icon"></i>
                     {item.title}
             </div>
-                <div class="active content">
+                <div className={`${active} content`}>
                     <p>{item.description}</p>
             </div>
        </div> 
@@ -19,4 +25,4 @@ const widget = ({Items})=>{
        <div>{renderesList}</div>
     )
 }
-export default widget;
+export default Widget;
