@@ -1,5 +1,6 @@
 import React from 'react';
-import QA from './QA'
+import QA from './QA';
+import Search from './search'
 
 const App=()=>
 {
@@ -18,7 +19,7 @@ const App=()=>
         }
     ]
     return(
-        <QA Items={items}/>
+        <Search/>
 
     )
 }
