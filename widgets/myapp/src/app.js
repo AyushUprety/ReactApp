@@ -1,6 +1,7 @@
 import React from 'react';
 import QA from './QA';
 import Search from './search'
+import Dropdown from './dropdown'
 
 const App=()=>
 {
@@ -18,8 +19,22 @@ const App=()=>
             description:'You use react by creating componenets'
         }
     ]
+    const options = [
+        { 
+            label:'The Color Red',
+            value:'red'
+        },
+        { 
+            label:'The color green',
+            value:'green'
+        },
+        {
+            label:'The Color Blue',
+            value:'blue'
+        }
+    ]
     return(
-        <Search/>
+        <Dropdown/>
 
     )
 }
