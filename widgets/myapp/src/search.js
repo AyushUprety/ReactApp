@@ -41,15 +41,21 @@ const Search =()=>{
 
 
        }
-       const timeoutid = setTimeout(()=>{
-        if(Term){
-            search();
-        }
-    },500)
-       return ()=>{
-               clearTimeout(timeoutid);
-           }
-       
+       if(Term && !Result.length){
+           search();
+       }
+       else{
+        const timeoutid = setTimeout(()=>{
+            if(Term){
+                search();
+            }
+        },500)
+           return ()=>{
+                   clearTimeout(timeoutid);
+               }
+           
+       }
+     
 
        console.log(Result);
     
