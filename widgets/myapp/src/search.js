@@ -6,6 +6,21 @@ const Search =()=>{
     const[Result, setResult]=useState([]);
     console.log(Result);
 
+    const renderedResult = Result.map((result)=>{
+        return (
+            <div className="ui list key" key={result.pageid}>
+                <div className="item">
+                    <div className="content">
+                        <a className="header">{result.title}</a>
+                        <div className="description">
+                            <span dangerouslySetInnerHTML={{__html: result.snippet}}></span>
+                        </div>
+                    </div>
+                </div>  
+            </div>          
+        )
+    })
+
    useEffect(()=>{
        const search = async ()=>{
            const {data} = await axios.get('https://en.wikipedia.org//w/api.php',{
@@ -29,10 +44,11 @@ const Search =()=>{
 
     return (
         <div>
-            <form class="ui segment container ">
-                <div class="field">
+            <form classNameName="ui segment container ">
+                <div classNameName="field">
                     <label>Enter the Term to Search:</label>
                     <input type="data" name="search" onChange={(e)=>{setTerm(e.target.value)}}></input>
+                    <div>{renderedResult}</div>
                 </div>
             </form>    
         </div>
