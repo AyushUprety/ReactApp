@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const Search =()=>{
-    const[ Term, setTerm]=useState('programming');
+    const[ Term, setTerm]=useState('');
     const[Result, setResult]=useState([]);
     console.log(Result);
 
@@ -14,6 +14,10 @@ const Search =()=>{
                         <a className="header">{result.title}</a>
                         <div className="description">
                             <span dangerouslySetInnerHTML={{__html: result.snippet}}></span>
+                            <button
+                             className="ui right floated button positive mini">
+                                 <a href={`http://en.wikipedia.org/?curid=${result.pageid}`}>Right Floated</a>
+                            </button>
                         </div>
                     </div>
                 </div>  
@@ -37,7 +41,16 @@ const Search =()=>{
 
 
        }
-       search();
+       const timeoutid = setTimeout(()=>{
+        if(Term){
+            search();
+        }
+    },500)
+       return ()=>{
+               clearTimeout(timeoutid);
+           }
+       
+
        console.log(Result);
     
    },[Term])
