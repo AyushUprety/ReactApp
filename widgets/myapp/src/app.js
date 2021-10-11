@@ -34,7 +34,7 @@ const App=()=>
         }
     ]
     return(
-        <Dropdown/>
+        <Dropdown options={options}/>
 
     )
 }
