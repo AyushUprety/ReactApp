@@ -4,11 +4,15 @@ const Dropdown = ({options,changeOption,Selected})=>{
 
     const renderedOptions = options.map(
         (option)=>{
+            if(Selected===option.label){
+                return null;
+            }  
             return(
                 <div onClick={()=>changeOption(option.label)} key={option.value} className="item">
                     {option.label}
                 </div>
             )
+        
         }
     )
     return(
