@@ -2,9 +2,12 @@ import React from 'react';
 import QA from './QA';
 import Search from './search'
 import Dropdown from './dropdown'
+import { useState } from 'react';
 
 const App=()=>
 {
+    const[selected,changeSelected]=useState('The Color Red')
+
     const items = [
         { 
             title:'What is React?',
@@ -34,7 +37,7 @@ const App=()=>
         }
     ]
     return(
-        <Dropdown options={options}/>
+        <Dropdown Selected={selected} changeOption={changeSelected} options={options}/>
 
     )
 }
