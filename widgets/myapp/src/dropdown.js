@@ -1,7 +1,15 @@
-import React from 'react'
+import React,{ useState,useEffect} from 'react'
 
 const Dropdown = ({options,changeOption,Selected})=>{
+    const[open,setOpen]=useState(false);
+    
+useEffect(()=>{
+    document.body.addEventListener('click',()=>{
+        setOpen(false);
+    },{capture:true})
+},[])
 
+    
     const renderedOptions = options.map(
         (option)=>{
             if(Selected===option.label){
@@ -19,10 +27,12 @@ const Dropdown = ({options,changeOption,Selected})=>{
        <div className="ui form">
            <div className="field">
                <label className="label">Select a color</label>
-               <div className="ui selection dropdown visible active">
+               <div 
+                    onClick={()=>setOpen(!open)} 
+                    className={`ui selection dropdown ${open?'visible active':''}`} >
                    <i className='dropdown icon'></i>
                    <div className="text">{Selected}</div>
-                   <div className="menu visible transition">
+                   <div className={`menu ${open?'visible transition':''}`}>
                        {renderedOptions}
                    </div>
            </div>
