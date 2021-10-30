@@ -3,6 +3,7 @@ import QA from './QA';
 import Search from './search'
 import Dropdown from './dropdown'
 import { useState } from 'react';
+import Translate from './translate';
 
 const App=()=>
 {
@@ -37,7 +38,7 @@ const App=()=>
         }
     ]
     return(
-        <Dropdown Selected={selected} changeOption={changeSelected} options={options}/>
+        <Translate/>
 
     )
 }
