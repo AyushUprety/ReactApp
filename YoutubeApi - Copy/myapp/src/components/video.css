@@ -1,0 +1,6 @@
+.Videos{
+    cursor: pointer;
+}
+.Videos  img {
+    max-width: 180px;
+}

@@ -1,6 +1,7 @@
 import React,{ useState,useEffect,useRef} from 'react'
 
 const Dropdown = ({options,changeOption,Selected,language})=>{
+    console.log(options);
     const[open,setOpen]=useState(false); // initialized open to false 
     const ref = useRef();
     
