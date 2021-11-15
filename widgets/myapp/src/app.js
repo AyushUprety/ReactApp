@@ -15,6 +15,7 @@ import Search from './search'
 import Dropdown from './dropdown'
 import { useState,useEffect } from 'react';
 import Translate from './translate';
+import Header from './Header';
 
 const App=()=>
 {
@@ -83,6 +84,7 @@ const App=()=>
             //     </a>
             // </div>
         <div>
+            <Header/>
             {nav()}
         </div>
         
