@@ -22,20 +22,23 @@ const App=()=>
     // const nav =()=>{
     //     return <Dropdown/>
     // }
-    // const nav = ()=>{
-    //     if(window.location.pathname==='/dropdown'){
-    //         return <Dropdown options={options}/>
-    //     }
-    //     else if(window.location.pathname==='/accordion'){  // --> There are multiple ifelse statements sothere is a good chance the code could be trimmed down.look down for another approach
-    //         return <QA Items={items}/>
-    //     }
-    //     else if(window.location.pathname==='/convert'){
-    //         return <Search/>
-    //     }
-    // }
-    const Nav = (path,component)=>{
-        return window.location.pathname===path?component:null // you tried to use tertiary expression but used it inside if tertiary itself is a conditonal statement so no need of if
+    const nav = ()=>{
+        if(window.location.pathname==='/dropdown'){
+            return <Dropdown options={options}/>
+        }
+        else if(window.location.pathname==='/accordion'){  // --> There are multiple ifelse statements sothere is a good chance the code could be trimmed down.look down for another approach
+            return <QA Items={items}/>
+        }
+        else if(window.location.pathname==='/convert'){
+            return <Search/>
+        }
     }
+    // const Nav = (path,component)=>{
+    //     let Component = component.replace(/"/g,"");
+    //     let Path = path.replace(/"/g,"");
+    //     return window.location.pathname===Path?Component:null // you tried to use tertiary expression but used it inside if tertiary itself is a conditonal statement so no need of if
+    // }
+
     const items = [
         { 
             title:'What is React?',
@@ -79,9 +82,12 @@ const App=()=>
             //         {/* <Dropdown options={options}/> */}
             //     </a>
             // </div>
-    
-        nav()
-
+        <div>
+            {nav()}
+        </div>
+        
+        
     )
 }
 export default App;
+//// You were tring to call function in return block that support jsx without div element you need to nest the function inside div element
