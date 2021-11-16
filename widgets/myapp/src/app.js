@@ -6,7 +6,8 @@
    was having trouble to render the form with href and upon click take it to the respective route.I then just
    focused on the fuctionality. I wrote the function that would be invoked when passed a particular path. The
    path was typed manually in the browser to test the functionality. Now, Next step is to create
-   a href link that would forward to particualr link upon clicking.
+   a href link that would forward to particualr link upon clicking.Routing was fixed using fucntional component
+   but it wasnot the react way of doing things so I made another component 'Route'.
 **/
 
 import React from 'react';
@@ -16,6 +17,7 @@ import Dropdown from './dropdown'
 import { useState,useEffect } from 'react';
 import Translate from './translate';
 import Header from './Header';
+import Route from './Route';
 
 const App=()=>
 {
@@ -23,17 +25,17 @@ const App=()=>
     // const nav =()=>{
     //     return <Dropdown/>
     // }
-    const nav = ()=>{
-        if(window.location.pathname==='/dropdown'){
-            return <Dropdown options={options}/>
-        }
-        else if(window.location.pathname==='/accordion'){  // --> There are multiple ifelse statements sothere is a good chance the code could be trimmed down.look down for another approach
-            return <QA Items={items}/>
-        }
-        else if(window.location.pathname==='/convert'){
-            return <Search/>
-        }
-    }
+    // const nav = ()=>{
+    //     if(window.location.pathname==='/dropdown'){
+    //         return <Dropdown options={options}/>
+    //     }
+    //     else if(window.location.pathname==='/accordion'){  // --> There are multiple ifelse statements sothere is a good chance the code could be trimmed down.look down for another approach
+    //         return <QA Items={items}/>
+    //     }
+    //     else if(window.location.pathname==='/convert'){
+    //         return <Search/>
+    //     }
+    // }
     // const Nav = (path,component)=>{
     //     let Component = component.replace(/"/g,"");
     //     let Path = path.replace(/"/g,"");
@@ -85,7 +87,17 @@ const App=()=>
             // </div>
         <div>
             <Header/>
-            {nav()}
+            <Route path={'/accordion'}>
+                {/* if(window.location.pathname==='dropdown'){
+                    return (
+                        <div>
+                            </Dropdown>
+                        </div>
+                    )                     //error syntax is incorrect elseif statement isnot supported inside jsx github gist for more
+                 */}
+                 <QA Items={items}/>
+
+            </Route>
         </div>
         
         
