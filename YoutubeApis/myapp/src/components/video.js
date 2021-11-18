@@ -2,7 +2,7 @@ import React from 'react';
 import './video.css';
 
 const Video = (props) => {
- 
+    console.log(props);
     const title = (props)=>{
         return props.childfunction(props.videos)
     }

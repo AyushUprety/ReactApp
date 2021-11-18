@@ -7,7 +7,8 @@
    focused on the fuctionality. I wrote the function that would be invoked when passed a particular path. The
    path was typed manually in the browser to test the functionality. Now, Next step is to create
    a href link that would forward to particualr link upon clicking.Routing was fixed using fucntional component
-   but it wasnot the react way of doing things so I made another component 'Route'.
+   but it wasnot the react way of doing things so I made another component 'Route'. I coulnot understand initially
+   how was the route code being executed inside the return statement. I thought that all the codes were preloaded 
 **/
 
 import React from 'react';
@@ -97,6 +98,9 @@ const App=()=>
                  */}
                  <QA Items={items}/>
 
+            </Route>
+            <Route path={'/dropdown'}>
+                <Dropdown options={options}/>
             </Route>
         </div>
         
