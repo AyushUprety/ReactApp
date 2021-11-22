@@ -3,9 +3,13 @@ import React from 'react';
 const Navbar = ()=>{
     return(
         <div className='ui menu'>
-            <a className='item'>our company</a>
+           
+            <a className='item'>Our Company</a>
             <div className='right menu'>
-                <a className='item'>Cart</a>
+            <a className="active teal item">
+                Cart
+            <div className="ui teal right pointing label">1</div>
+            </a>
             </div>
         </div>
     )
