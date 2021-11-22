@@ -1,9 +1,17 @@
 import React from 'react';
+import { useState, useEffect} from 'react';
 
 const Container = ({Name,img})=>{
-    return (
-        
-        
+    const[quantity,setquantity]=useState(0);
+    useEffect(()=>{
+      document.querySelector(".increase").addEventListener('click',()=>{
+        setquantity(quantity+1);
+      })
+      document.querySelector(".decrease").addEventListener('click',()=>{
+        setquantity(quantity-1);
+      })
+    },[quantity])
+    return (   
       <div className="ui card">
       <div className="image">
         <img src={img}/>
@@ -16,9 +24,9 @@ const Container = ({Name,img})=>{
       </div>
       <div className="extra content">
         <a>
-        <i class="fas fa-arrow-up"></i>
-        22 Friends
-        <i class="fas fa-arrow-down"></i>
+        <button className='increase'><i class="fas fa-arrow-up"></i></button>
+        {quantity}
+        <button className='decrease'><i class="fas fa-arrow-down"></i></button>
         </a>
       </div>
     </div>
