@@ -10,21 +10,25 @@ import SongDetails from './songdetail';
 import {useState} from 'react';
 
 const Song=({title,length})=>{
-    const[title,updatetitle]=useState(false);
-    // const showdetail =(title)=>{
-    //     if(title===true){
-    //         return </SongDetails>
-    //     } 
-    //     return
-    // }
-   useEffect(()=>{
-       updatetitle(true);
-   },[title])
+    const[open,setopen]=useState(false);
+//     const[title,updatetitle]=useState(false);
+//     // const showdetail =(title)=>{
+//     //     if(title===true){
+//     //         return </SongDetails>
+//     //     } 
+//     //     return
+//     // }
+   const changestate=()=>{
+       setopen(!open);
+        return open===true?<SongDetails title={title} length={length}/>:null
+   }
+       
+   
     return (
         <div>
             {title}
-            <button onClick={updatetitle(true)}>Select</button>
-            <SongDetails title={title} length={length}/>
+            <button onClick={changestate}>Select</button>
+            
         </div>
         
     )
