@@ -18,17 +18,17 @@ const Song=({title,length})=>{
 //     //     } 
 //     //     return
 //     // }
-   const changestate=()=>{
-       setopen(!open);
-        return open===true?<SongDetails title={title} length={length}/>:null
-   }
+//    const changestate=()=>{
+//        setopen(!open);
+//         return open===true?<SongDetails title={title} length={length}/>:null
+//    }
        
    
     return (
         <div>
             {title}
-            <button onClick={changestate}>Select</button>
-            
+            <button onClick={()=>setopen(!open)}>Select</button>
+            {open===true?<SongDetails title={title} length={length}/>:''}
         </div>
         
     )

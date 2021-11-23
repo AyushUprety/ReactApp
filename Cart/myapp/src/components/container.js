@@ -3,18 +3,22 @@ import { useState, useEffect} from 'react';
 
 const Container = ({Name,img})=>{
     const[quantity,setquantity]=useState(0);
-    useEffect(()=>{
-      document.querySelector(".increase").addEventListener('click',()=>{
-        setquantity(quantity+1);
-      })
-      document.querySelector(".decrease").addEventListener('click',()=>{
-        setquantity(quantity-1);
-      })
-    },[quantity])
+    // const increase =()=>{
+    //    setquantity(quantity+1)
+    // }
+    // const decrease =()=>{
+    //    setquantity(quantity-1)
+    // }
+    const handleIncrease = () => {
+      setquantity(q => q + 1)
+    }
+    const handleDecrease = () => {
+      setquantity(q => q - 1)
+    }
     return (   
       <div className="ui card">
       <div className="image">
-        <img src={img}/>
+        <img src={img}/> 
       </div>
       <div className="content">
         <a className="header">{Name}</a>
@@ -24,9 +28,9 @@ const Container = ({Name,img})=>{
       </div>
       <div className="extra content">
         <a>
-        <button className='increase'><i class="fas fa-arrow-up"></i></button>
+        <button onClick={handleIncrease} className='increase'><i class="fas fa-arrow-up"></i></button>
         {quantity}
-        <button className='decrease'><i class="fas fa-arrow-down"></i></button>
+        <button onClick={handleDecrease} className='decrease'><i class="fas fa-arrow-down"></i></button>
         </a>
       </div>
     </div>
