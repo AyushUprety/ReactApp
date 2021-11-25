@@ -3,6 +3,7 @@ import { useState, useEffect} from 'react';
 
 const Container = ({Name,img})=>{
     const[quantity,setquantity]=useState(0);
+    const[Quantity,setQuantity]=useState(0);
     // const increase =()=>{
     //    setquantity(quantity+1)
     // }
