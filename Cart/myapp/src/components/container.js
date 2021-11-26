@@ -58,27 +58,7 @@ const Container = ({ Products }) => {
           </div>
         );
       })}
-      {/* <div className="image">
-        <img src={img}/> 
-      </div>  */}
-      <div className="content">
-        {/* <a className="header">{Name}</a> */}
-        <div className="meta">
-          <span className="date">Added in 2020</span>
-        </div>
-      </div>
-      <div className="extra content">
-        <a>
-          <button onClick={handleIncrease} className="increase">
-            <i class="fas fa-arrow-up"></i>
-          </button>
-          {quantity}
-          <button onClick={handleDecrease} className="decrease">
-            <i class="fas fa-arrow-down"></i>
-          </button>
-        </a>
-      </div>
-    </div>
+  </div>
   );
 };
 export default Container;
