@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './navbar'
-import Container from './container'
+import Product from './products'
 import Data from './data'
 
 const App=()=>{
@@ -10,7 +10,7 @@ const App=()=>{
             <Navbar/>
                 <div className="ui grid">
                     <div className="six wide column">
-                        <Container Products={products}/>
+                        <Product Products={products}/>
                     </div>
             
                 </div>
