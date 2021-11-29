@@ -10,7 +10,7 @@
  */
 
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Product from './product'
 
 // const productList = products => {
@@ -23,7 +23,8 @@ import Product from './product'
 // }
 
 const Products = ({ Products }) => {
- 
+    const [quantity, setquantity] = useState(0); // used to set and update state
+    
   // const increase =()=>{
   //    setquantity(quantity+1)
   // }
