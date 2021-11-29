@@ -10,8 +10,10 @@
  */
 
 import React from "react";
-import { useState } from "react";
+import { useState } from "react"
 import Product from './product'
+import Cart from './cart'
+
 
 // const productList = products => {
 //   const productList = products.map(prod => {
@@ -36,7 +38,12 @@ const Products = ({ Products }) => {
     <div className="ui card">
       {Products.map((product) => {
         return (
-          <Product key={product.id} product={product}/>
+          <div>
+             <Product quantity={quantity}  setquantity={setquantity} key={product.id} product={product}/>
+             <Cart quantity={quantity}  setquantity={setquantity} key={product.id} product={product}/>
+
+          </div>
+         
           // <div>
           //   <div className="image">
           //     <img src={product.img} />
