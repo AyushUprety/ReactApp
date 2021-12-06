@@ -2,9 +2,9 @@ import React from "react";
 import Products from "./products";
 import {useState,useEffect} from "react"
 
-const Product = ({ product }) => {
-    const [quantity, setquantity] = useState(0);
-    const [Quantity, setQuantity] = useState(0);
+const Product = ({ product ,quantity,setquantity}) => {
+    // const [quantity, setquantity] = useState(0);
+    // const [Quantity, setQuantity] = useState(0);
     const handleIncrease = (e) => {
         setquantity((q) => q + 1);
       };
