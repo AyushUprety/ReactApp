@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+    padding:0px;
+    margin:0px;
+    color:rgb(59, 59, 173);
+}
+.container{
+    display: flex;
+    padding:1rem;
+    text-align:center;
+    justify-content:space-between;
+}
+.cart-end{
+    display: flex;
+}
+.container #items-amt{
+    border: 2px solid black;
+    border-radius: 40px 30px;
+    background-color:rgb(209, 44, 44);
+}
