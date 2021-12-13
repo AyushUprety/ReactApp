@@ -1,0 +1,16 @@
+{
+    "products": [
+        {
+            "title": "macbook",
+            "price": 1500
+        },
+        {
+            "title": "Car",
+            "price": 500000
+        },
+        {
+            "title": "Shoes",
+            "price": 5000
+        }
+    ]
+}
