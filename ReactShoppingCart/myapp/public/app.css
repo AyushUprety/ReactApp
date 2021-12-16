@@ -18,8 +18,12 @@
     border-radius: 40px 30px;
     background-color:rgb(209, 44, 44);
 }
-.item-container{
+.items-container{
+    display: flex;
+    justify-content:space-evenly;
     border: 1px solid grey;
     background-color:grey;
-
+}
+.items-container{
+    height: 150px;
 }

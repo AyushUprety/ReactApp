@@ -4,7 +4,7 @@ import Item from './Product'
 
 const Product = ()=>{
     return(
-        <div className="item-container">
+        <div className="items-container">
            {Data.map(product =>{
                return(
                     <Item key={product.id} product={product}/>
