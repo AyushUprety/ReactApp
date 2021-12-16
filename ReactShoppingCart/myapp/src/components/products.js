@@ -1,17 +1,16 @@
 import React from 'react';
 import Data from './data';
-import Item from './Product'
+import Item from './Product';
+import Cart from './cart';
 
 const Product = ()=>{
     return(
-        <div className="items-container">
+        <div>
            {Data.map(product =>{
                return(
                     <Item key={product.id} product={product}/>
                )
-              
-               
-           })}
+            })}
         </div>
     )
 }
