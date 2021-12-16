@@ -18,3 +18,8 @@
     border-radius: 40px 30px;
     background-color:rgb(209, 44, 44);
 }
+.item-container{
+    border: 1px solid grey;
+    background-color:grey;
+
+}
