@@ -6,9 +6,9 @@ const Item = ({product})=>{
 
     return(
         <div className='item-container'>
-            {title}
-            {price}
             <img src={url} width="100px" height="100px"/>
+            <h3>{title}</h3>
+            <h3>{price}</h3>
         </div>
     )
 }
