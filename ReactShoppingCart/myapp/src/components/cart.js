@@ -1,10 +1,11 @@
 import React from 'react'
 
-const Cart =()=>{
+const Cart =(props)=>{
+    console.log(props)
     return(
         <div>
             <h2>Cart Items</h2>
-            <p>No items</p>
+            
         </div>
     )
 }
