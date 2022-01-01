@@ -21,7 +21,10 @@ const App = () => {
     if(exist){
       setCartItems(cartItems.map(item=>item.id===product.id?{...item,qty:qty+1}:null))
     }
-  
+    else{
+      setCartItems([...cartItems,{...product,qty:1}])
+    }
+  }
 
   return (
     <div>
