@@ -3,7 +3,9 @@ item.id===product.id ma product xi kaha bata launu.I came to conclusion
 that for this to work we will pass product as an argument. So product click
 huda tyo addToCart function run garna which will also take an product as an argument
 jastai tyo product ma products map vayera individual product aako hunxa
-Now that product can be passed as an argument in addToCart function.
+Now that product can be passed as an argument in addToCart function.Ka gara vanda
+tyo individual product bala component ma onClick ma function vitra addToCart call 
+garera tesma argument product pathako ho.
 **/
 
 import React from "react";
@@ -31,7 +33,7 @@ const App = () => {
       <Header />
       <div className="productandcart">
         <div className="items-container">
-          <Product /> 
+          <Product cartItems={cartItems} addToCart={addToCart}/> 
         </div>
         <div className="cart">
           <Cart cartItems={cartItems} addToCart={addToCart}/>

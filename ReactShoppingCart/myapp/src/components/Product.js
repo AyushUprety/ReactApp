@@ -10,8 +10,10 @@ Now what?**/
 import React from 'react';
 import Cart from './cart'
 
-const Item = ({product})=>{
-    const{title,price,url} = product;
+const Item = (props)=>{
+    const {product}= props;
+    const{title,price,url} =product;
+    const{cartItems,addToCart} = props;
     console.log(title)
 
     const addItem = ()=>{
@@ -23,7 +25,7 @@ const Item = ({product})=>{
             <img src={url} width="100px" height="100px"/>
             <h3>{title}</h3>
             <h3>${price}</h3>
-            <button onClick={addItem}>Add to Cart</button>
+            <button onClick={()=>addToCart(product)}>Add to Cart</button>
             {/* {addItem()}  */}
         </div>
     )
