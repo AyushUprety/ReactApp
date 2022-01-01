@@ -27,6 +27,9 @@ const App = () => {
       setCartItems([...cartItems,{...product,qty:1}])
     }
   }
+  const removeFromCart=(product) =>{
+    setCartItems(product.pop())
+  }
 
   return (
     <div>

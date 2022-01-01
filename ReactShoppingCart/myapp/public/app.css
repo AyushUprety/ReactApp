@@ -29,8 +29,12 @@
 .productandcart{
     display: flex;
     justify-content:space-between;
+    flex:1;
 }
 .item-container{
     display:flex;
     
+}
+.cartspacing{
+
 }

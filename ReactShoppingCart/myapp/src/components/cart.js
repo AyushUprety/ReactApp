@@ -10,9 +10,12 @@ const Cart = (props) => {
       {/* && denotes if before condition is true execute 2nd statement*/}
       {cartItems.map((item) => {
         return (
-          <div key={item.id}>
+        <div key={item.id} className='cartspacing'>
             <div>{item.title}</div>
-          </div>
+            <div>{item.qty}</div>
+            <button onClick={()=>addToCart(item)}>+</button>
+            <button onClick={()=>removeFromCart(item)}>-</button>
+        </div>
         );
       })}
     </div>
