@@ -14,7 +14,6 @@ const Item = (props)=>{
     const {product}= props;
     const{title,price,url} =product;
     const{cartItems,addToCart} = props;
-    console.log(title)
 
     const addItem = ()=>{
         return <Cart title={title}/>

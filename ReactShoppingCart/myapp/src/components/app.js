@@ -21,7 +21,7 @@ const App = () => {
     // const item = Items.find((item)=>item.id===)
     const exist = cartItems.find(item=>item.id===product.id)
     if(exist){
-      setCartItems(cartItems.map(item=>item.id===product.id?{...item,qty:item.qty+1}:null))
+      setCartItems(cartItems.map(item=>item.id===product.id?{...exist,qty:exist.qty+1}:item))
     }
     else{
       setCartItems([...cartItems,{...product,qty:1}])
