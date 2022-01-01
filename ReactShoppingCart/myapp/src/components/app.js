@@ -15,9 +15,13 @@ import Items from './data';
 
 const App = () => {
   const[cartItems,setCartItems] =useState([]);
-  const addToCart =()=>{
+  const addToCart =(product)=>{
     // const item = Items.find((item)=>item.id===)
-  }
+    const exist = cartItems.find(item=>item.id===product.id)
+    if(exist){
+      setCartItems(cartItems.map(item=>item.id===product.id?{...item,qty:qty+1}:null))
+    }
+  
 
   return (
     <div>
