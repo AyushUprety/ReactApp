@@ -2,7 +2,7 @@ import React from "react";
 
 const Cart = (props) => {
   console.log(props);
-  const { cartItems, addToCart } = props;
+  const { cartItems, addToCart,removeFromCart } = props;
   return (
     <div>
       <h2>Cart Items</h2>

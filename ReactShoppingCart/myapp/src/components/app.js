@@ -28,7 +28,13 @@ const App = () => {
     }
   }
   const removeFromCart=(product) =>{
-    setCartItems(product.pop())
+    const Item = cartItems.find((item)=>item.id===product.id)
+    if(Item.qty===1){
+      setCartItems(cartItems.filter((item)=>item.id!=product.id))
+    }
+    else{
+      setCartItems(cartItems.map((item)=>product.id===item.id?{...item,qty:item.qty-1}:item))
+    }
   }
 
   return (
@@ -39,7 +45,7 @@ const App = () => {
           <Product cartItems={cartItems} addToCart={addToCart}/> 
         </div>
         <div className="cart">
-          <Cart cartItems={cartItems} addToCart={addToCart}/>
+          <Cart removeFromCart={removeFromCart} cartItems={cartItems} addToCart={addToCart}/>
         </div>
       </div>
     </div>
