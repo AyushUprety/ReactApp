@@ -12,7 +12,7 @@ const App = () => {
   return (
     <div>
       <h1>Ayush's Todo List</h1>
-      <Add  items={items} setItems={setItems} userInput={userInput} setUserInput={setUserInput}/>
+      <Add uncompleted={uncompleted} setUncompleted={setUncompleted} setCompleted={setCompleted}items={items} setItems={setItems} userInput={userInput} setUserInput={setUserInput}/>
       <Display items={items} setItems={setItems}/>
     </div>
   );
