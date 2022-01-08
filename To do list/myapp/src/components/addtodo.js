@@ -2,10 +2,8 @@
 // aasti ko jasto anonymous function halnu parena
 
 import React from "react";
-import {useState} from "react"
-const Add = () => {
-  const[items,setItems]=useState([]);
-  const[userInput,setUserInput]=useState('');
+const Add = (props) => {
+  const{items,setItems,userInput,setUserInput}=props;
   return (
     <div>
       <form method="" action="">
@@ -14,8 +12,7 @@ const Add = () => {
           e.preventDefault();
           setItems(userInput);
           console.log(items)
-          
-        }}><i className="fas fa-plus-square"></i></button>
+       }}><i className="fas fa-plus-square"></i></button>
         <select>
             <option>All</option>
             <option>Completed</option>
