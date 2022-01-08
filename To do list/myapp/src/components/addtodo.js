@@ -3,7 +3,8 @@
 /** setItem property kasari use garna janinas. You wrote setItems(userInput).
  * What you were doing was replacing the array with item variable and not appending
  * the input to the todolist array.I donot want to display anything when nothing is 
- * typed in input field. But, I am having a problem.
+ * typed in input field. But, I am having a problem.Problem was you were initiating the
+ * state with empty string and condition ma you were checking if null
  */
 
 import React from "react";

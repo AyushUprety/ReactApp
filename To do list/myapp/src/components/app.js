@@ -7,6 +7,8 @@ import Display from './rendertodo';
 const App = () => {
   const[items,setItems]=useState([]);
   const[userInput,setUserInput]=useState('');
+  const[completed,setCompleted]=useState([]);
+  const[uncompleted,setUncompleted]=useState([]);
   return (
     <div>
       <h1>Ayush's Todo List</h1>

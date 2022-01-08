@@ -5,19 +5,24 @@
  * todo.map.
  */
 
-import React from 'react';
+import React from "react";
 
-const display = (props)=>{
-    const{items,setItems,userInput,setUserInput}=props;
-    console.log({items});
-    return(
-        <div>
-            {items.map((item,index)=>{
-            return(
-                <li key={`item${index}`}>{item}</li>
-            )
-            })}
-        </div>
-    )
-}
+const display = (props) => {
+  const { items, setItems, userInput, setUserInput } = props;
+   
+  console.log({ items });
+  return (
+    <div>
+      {items.map((item, index) => {
+        return (
+          <li key={`item${index}`}>
+            {`${item}`}
+            <i className="fas fa-check-circle"></i>
+            <i class="fas fa-times-circle"></i>
+          </li>
+        );
+      })}
+    </div>
+  );
+};
 export default display;
