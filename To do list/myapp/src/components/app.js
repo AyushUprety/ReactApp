@@ -1,7 +1,7 @@
 import React from "react";
 import Add from "./addtodo";
 import {useState} from "react";
-import Render from './rendertodo';
+import Display from './rendertodo';
 
 
 const App = () => {
@@ -11,7 +11,7 @@ const App = () => {
     <div>
       <h1>Ayush's Todo List</h1>
       <Add  items={items} setItems={setItems} userInput={userInput} setUserInput={setUserInput}/>
-      <Render items={items} setItems={setItems}/>
+      <Display items={items} setItems={setItems}/>
     </div>
   );
 };

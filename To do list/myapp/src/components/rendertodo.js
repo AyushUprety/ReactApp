@@ -1,11 +1,16 @@
 import React from 'react';
 
-const Render = (props)=>{
+const display = (props)=>{
     const{items,setItems}=props;
+    console.log({items});
     return(
         <div>
-
+            {items.map((item,index)=>{
+            return(
+                <li key={`item${index}`}>{item}</li>
+            )
+            })}
         </div>
     )
 }
-export default Render;
+export default display;
