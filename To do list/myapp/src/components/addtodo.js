@@ -8,8 +8,12 @@
  */
 
 import React from "react";
+const getRandomId = () => {
+  return Math.random() * 1000;
+}
 const Add = (props) => {
-  const{items,setItems,userInput,setUserInput}=props;
+  const{items,setItems,userInput,setUserInput,completed,setCompleted} = props;
+  console.log('id',getRandomId())
   return (
     <div>
       <form method="" action="">
@@ -21,7 +25,7 @@ const Add = (props) => {
             return
           }
           else{
-            setItems([...items,userInput]);
+            setItems([...items,{title:userInput,id:getRandomId()}]);
           }
         
           console.log(items)
