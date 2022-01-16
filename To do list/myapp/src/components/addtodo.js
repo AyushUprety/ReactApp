@@ -20,7 +20,7 @@ const Add = (props) => {
   return (
     <div>
       <form method="" action="">
-        <input type="text" value={userInput} onChange={e => setUserInput(e.target.value)}/> {/*use an anonymous function when you need to pass argument in the function that you are calling*/}
+        <input type="text" onChange={e => setUserInput(e.target.value)}/> {/*use an anonymous function when you need to pass argument in the function that you are calling*/}
         <button onClick={(e)=>{
           e.preventDefault();
           if(userInput===''){
@@ -29,14 +29,14 @@ const Add = (props) => {
           }
           else{
             setItems([...items,{title:userInput,id:getRandomId()}]);
-            setUserInput('')
-          } 
+          }
         
+          console.log(items)
        }}><i className="fas fa-plus-square"></i></button>
-        <select onChange={(e)=>{console.log(e.target.value)}}>
-            <option value="all">All</option>
-            <option value='completed' >Completed</option>
-            <option value='uncompleted'>uncompleted</option>
+        <select>
+            <option>All</option>
+            <option>Completed</option>
+            <option>uncompleted</option>
         </select>
       </form>
     </div>
