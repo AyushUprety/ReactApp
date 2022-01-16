@@ -20,7 +20,7 @@ const Display = (props) => {
         return (
           <li key={`item${index}`}>
             {item.title}
-            <i onClick={() => setItems([...items.filter(Item=>Item.id!==item.id)],{completed:true})} className="fas fa-check-circle"></i>
+            <i onClick={()=>([...item,{completed:true}])}className="fas fa-check-circle"></i>
             {console.log(items)}
           </li>
         );
