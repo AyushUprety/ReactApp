@@ -14,7 +14,9 @@ import React from "react";
 const getRandomId = () => {
   return Math.random() * 1000;
 }
-
+const statusHandler = (event)=>{
+  console.log(event.target.value)
+}
 const Add = (props) => {
   const{items,setItems,userInput,setUserInput,completed,setCompleted} = props;
   console.log('id',getRandomId())
@@ -44,7 +46,7 @@ const Add = (props) => {
         
           console.log(items)
        }}><i className="fas fa-plus-square"></i></button>
-        <select>
+        <select onChange={(e)=>statusHandler(e)}>
             <option value='All'>All</option>
             <option value='Completed'>Completed</option>
             <option value='uncompleted'>uncompleted</option>
