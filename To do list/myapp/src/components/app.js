@@ -7,7 +7,7 @@ import Display from './rendertodo';
 const App = () => {
   const[items,setItems]=useState([]);
   const[userInput,setUserInput]=useState('');
-  const[completed,setCompleted]=useState([]);
+  const[completed,setCompleted]=useState('all');
   
   return (
     <div>

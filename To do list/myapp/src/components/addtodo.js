@@ -14,13 +14,23 @@ import React from "react";
 const getRandomId = () => {
   return Math.random() * 1000;
 }
+
 const Add = (props) => {
   const{items,setItems,userInput,setUserInput,completed,setCompleted} = props;
   console.log('id',getRandomId())
+  // const filterItems=(value)=>{
+  //   switch(value){
+  //     case "All":
+  //       return
+  //       break;
+  //     case "Completed":
+                
+  //   }
+  // }
   return (
     <div>
       <form method="" action="">
-        <input type="text" onChange={e => setUserInput(e.target.value)}/> {/*use an anonymous function when you need to pass argument in the function that you are calling*/}
+        <input type="text" value={userInput} onChange={e => setUserInput(e.target.value)}/> {/*use an anonymous function when you need to pass argument in the function that you are calling*/}
         <button onClick={(e)=>{
           e.preventDefault();
           if(userInput===''){
@@ -28,15 +38,16 @@ const Add = (props) => {
             return
           }
           else{
-            setItems([...items,{title:userInput,id:getRandomId()}]);
+            setItems([...items,{title:userInput,completed:false,id:getRandomId()}]);
+            setUserInput('')
           }
         
           console.log(items)
        }}><i className="fas fa-plus-square"></i></button>
         <select>
-            <option>All</option>
-            <option>Completed</option>
-            <option>uncompleted</option>
+            <option value='All'>All</option>
+            <option value='Completed'>Completed</option>
+            <option value='uncompleted'>uncompleted</option>
         </select>
       </form>
     </div>

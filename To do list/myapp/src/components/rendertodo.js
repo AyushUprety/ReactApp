@@ -14,13 +14,17 @@ import React from "react";
 const Display = (props) => {
   const { items, setItems } = props;
   console.log('items',items)
+  const deleteItem=(item)=>{
+    setItems(items.filter(el=>el.id!==item.id))// yesma expection a function but got an expression bala error aakko thiyo curly brace lekheko this but not return.Either use es6 syntax or use return statement
+  }
   return (
     <div>
       {items.map((item, index) => {
         return (
           <li key={`item${index}`}>
             {item.title}
-            <i onClick={()=>([...item,{completed:true}])}className="fas fa-check-circle"></i>
+            <i onClick={()=>setItems([...items,{completed:true}])}className="fas fa-check-circle"></i>
+            <i onClick={()=>{deleteItem(item)}} className="fas fa-trash-alt"></i>
             {console.log(items)}
           </li>
         );
