@@ -18,16 +18,17 @@ const Display = (props) => {
     setItems(items.filter(el=>el.id!==item.id))// yesma expection a function but got an expression bala error aakko thiyo curly brace lekheko this but not return.Either use es6 syntax or use return statemetn
   }
   const completeEventHandler=(item)=>{
-    items.map(el=>{
+    setItems(items.map(el=>{
       if(el.id===item.id){
        return{
          ...item,completed:!item.completed
        }
       }
       else{
-        return
+        return item
       }
-    })
+      console.log(items)
+    }))
   }
   return (
     <div>
@@ -35,7 +36,7 @@ const Display = (props) => {
         return (
           <li key={`item${index}`}>
             {item.title}
-            <i onClick={()=>setItems([...items,{completed:true}])}className="fas fa-check-circle"></i>
+            <i onClick={()=>completeEventHandler(item)}className="fas fa-check-circle"></i>
             <i onClick={()=>{deleteItem(item)}} className="fas fa-trash-alt"></i>
             {console.log(items)}
           </li>
