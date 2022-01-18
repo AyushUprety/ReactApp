@@ -26,6 +26,13 @@ const Add = (props) => {
     switch(value){
       case "Completed":
         setFilteredTodos(items.filter((el)=>el.completed===true))
+        break;
+      case "uncompleted":
+        setFilteredTodos(items.filter((el)=>el.completed===false))
+        break;
+      case "All":
+        setFilteredTodos(items)
+        break;  
     }
   }
   return (
