@@ -11,9 +11,13 @@
  */
 
 import React from "react";
+import {useEffect} from 'react'
 
 const Add = (props) => {
   const{items,setItems,userInput,setUserInput,completed,setCompleted,filteredTodos,setFilteredTodos} = props;
+  useEffect(()=>{
+    filterItems()
+  },completed)
   const getRandomId = () => {
     return Math.random() * 1000;
   }
