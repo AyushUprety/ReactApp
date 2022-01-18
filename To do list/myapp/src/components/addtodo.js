@@ -11,24 +11,23 @@
  */
 
 import React from "react";
-const getRandomId = () => {
-  return Math.random() * 1000;
-}
-const statusHandler = (event)=>{
-  console.log(event.target.value)
-}
+
 const Add = (props) => {
-  const{items,setItems,userInput,setUserInput,completed,setCompleted} = props;
+  const{items,setItems,userInput,setUserInput,completed,setCompleted,filteredTodos,setFilteredTodos} = props;
+  const getRandomId = () => {
+    return Math.random() * 1000;
+  }
+  const statusHandler = (event)=>{
+    console.log(event.target.value)
+    setCompleted(event.target.value)
+  }
   console.log('id',getRandomId())
-  // const filterItems=(value)=>{
-  //   switch(value){
-  //     case "All":
-  //       return
-  //       break;
-  //     case "Completed":
-                
-  //   }
-  // }
+  const filterItems=(value)=>{
+    switch(value){
+      case "Completed":
+        setFilteredTodos(items.filter((el)=>el.completed===true))
+    }
+  }
   return (
     <div>
       <form method="" action="">
